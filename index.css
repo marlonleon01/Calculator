@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-color: aqua;
+    background: linear-gradient(to right, rgb(0, 225, 255), rgb(118, 192, 75));
     display: flex;
     justify-content: center;
     align-items: center;
