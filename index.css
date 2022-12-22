@@ -41,8 +41,24 @@ button:hover {
 
 .numbers-field {
     grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 10px;
+    
 }
 
 .all-clear-btn, .equal-operator {
     grid-column: span 2;
+}
+
+.previous-operand {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 75%);
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    color: #fff;
 }
