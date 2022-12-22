@@ -18,4 +18,19 @@ body {
     overflow: hidden;
 }
 
+.calculator-grid {
+    width: 300px;
+    height: 400px;
+    text-align: center;
+}
 
+.numbers-field {
+    background: #000;
+}
+
+button {
+    height: 80px;
+    width: 60px;
+    border: solid 2px #fff;
+    background:rgb(192, 248, 255);
+}
