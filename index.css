@@ -23,14 +23,20 @@ body {
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-/* .numbers-field {
+.numbers-field {
     background: rgba(20, 20, 20, 0.822);
-    height: 60px;
+    height: 100%;
+    width: 100%;
 }
 
 button {
-    height: 50px;
-    width: 24%;
-    border: solid 2px #fff;
-    background:rgb(192, 248, 255);
-} */
+    border: solid 1px #fff;
+    background-color:rgba(255, 255, 255, 75%);
+    cursor: pointer;
+    font-size: 2rem;
+    outline: none;
+}
+
+button:hover {
+    background-color:rgba(255, 255, 255, 90%);
+}
