@@ -20,6 +20,7 @@ class Calculator {
 
     updateDisplay() {
         this.currentOperandTextField.innerText = this.currentOperand;
+        this.previousOperandTextField.innerText = this.previousOperand;
     }
 
     clear() {
@@ -42,7 +43,13 @@ class Calculator {
     }
 
     chooseOperation(operation) {
-    
+        if (this.currentOperand === "") return
+        if (this.previousOperand != "") {
+            this.compute();
+        }
+        this.operation = operation;
+        this.previousOperand = this.currentOperand;
+        this.currentOperand = '';
     }
 }
 
