@@ -7,30 +7,6 @@ let allClearBtn = document.querySelector(".all-clear-btn");
 let deleteBtn = document.querySelector(".delete-btn");
 let previousOperandTextField = document.querySelector(".previous-operand");
 let currentOperandTextField = document.querySelector(".current-operand");
-let calculator = new Calculator(previousOperandTextField, currentOperandTextField);
-
-//Event Listeners to make buttons work
-
-numberBtns.forEach((button) => {
-    button.addEventListener("click", () => {
-        calculator.appendNumber(button.innerText);
-        calculator.updateDisplay();
-    })
-})
-
-operationBtns.forEach((button) => {
-    button.addEventListener("click", () => {
-        calculator.chooseOperation(button.innerText);
-        calculator.updateDisplay();
-    })
-})
-
-equalBtn.addEventListener("click", () => {
-    calculator.compute();
-    calculator.updateDisplay();
-})
-
-
 
 //Make the calculator work with a class
 
@@ -98,3 +74,26 @@ class Calculator {
         this.currentOperand = '';
     }
 }
+
+//Event Listeners to make buttons work
+
+let calculator = new Calculator(previousOperandTextField, currentOperandTextField);
+
+numberBtns.forEach((button) => {
+    button.addEventListener("click", () => {
+        calculator.appendNumber(button.innerText);
+        calculator.updateDisplay();
+    })
+})
+
+operationBtns.forEach((button) => {
+    button.addEventListener("click", () => {
+        calculator.chooseOperation(button.innerText);
+        calculator.updateDisplay();
+    })
+})
+
+equalBtn.addEventListener("click", () => {
+    calculator.compute();
+    calculator.updateDisplay();
+})
