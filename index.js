@@ -19,8 +19,31 @@ class Calculator {
     }
 
     updateDisplay() {
-        this.currentOperandTextField.innerText = this.currentOperand;
-        this.previousOperandTextField.innerText = this.previousOperand;
+        this.currentOperandTextField.innerText = this.getDisplayNumber(this.currentOperand);
+        if (this.operation != null) {
+            this.previousOperandTextField.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+        } else {
+            this.previousOperandTextField.innerText = "";
+        }
+    }
+
+    getDisplayNumber(number) {
+        const stringNumber = number.toString();
+        const integerDigits = parseFloat(stringNumber.split(".")[0])
+        const decimalDigits = stringNumber.split(".")[1];
+        let integerDisplay 
+        if (isNaN(integerDigits)) {
+            integerDisplay = "";
+        } else {
+            integerDisplay = integerDigits.toLocaleString("en", {
+                maximumFractionDigits: 0
+            })
+        }
+        if (decimalDigits != null) {
+            return `${integerDisplay}.${decimalDigits}`;
+        } else {
+            return integerDisplay;
+        }
     }
 
     clear() {
