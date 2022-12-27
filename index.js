@@ -15,14 +15,17 @@ class Calculator {
     constructor(previousOperandTextField, currentOperandTextField) {
         this.previousOperandTextField = previousOperandTextField;
         this.currentOperandTextField = currentOperandTextField;
+        this.clear();
     }
 
     updateDisplay() {
-        
+        this.currentOperandTextField.innerText = this.currentOperand;
     }
 
     clear() {
-
+        this.currentOperand = '';
+        this.previousOperand = '';
+        this.operation = undefined;
     }
 
     delete() {
@@ -30,7 +33,8 @@ class Calculator {
     }
 
     appendNumber(number) {
-
+        if (number === "." && this.currentOperand.includes(".")) return
+        this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
     compute() {
@@ -38,9 +42,22 @@ class Calculator {
     }
 
     chooseOperation(operation) {
-
+    
     }
 }
 
-let calculator = new Calculator;
+let calculator = new Calculator(previousOperandTextField, currentOperandTextField);
 
+numberBtns.forEach((button) => {
+    button.addEventListener("click", () => {
+        calculator.appendNumber(button.innerText);
+        calculator.updateDisplay();
+    })
+})
+
+operationBtns.forEach((button) => {
+    button.addEventListener("click", () => {
+        calculator.chooseOperation(button.innerText);
+        calculator.updateDisplay();
+    })
+})
