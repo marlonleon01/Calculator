@@ -30,7 +30,7 @@ class Calculator {
     }
 
     delete() {
-
+        
     }
 
     appendNumber(number) {
@@ -95,5 +95,15 @@ operationBtns.forEach((button) => {
 
 equalBtn.addEventListener("click", () => {
     calculator.compute();
+    calculator.updateDisplay();
+})
+
+allClearBtn.addEventListener("click", () => {
+    calculator.clear();
+    calculator.updateDisplay();
+})
+
+deleteBtn.addEventListener("click", () => {
+    calculator.delete();
     calculator.updateDisplay();
 })
